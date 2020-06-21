@@ -1,11 +1,13 @@
+service: demo-gae
 runtime: nodejs10
-
 instance_class: F1
-
 handlers:
-- url: /(.*\.(json|ico|png|js))$
+- url: /static
+  static_dir: build/static
+  secure: always
+- url: /(.*\.(json|ico|png|js|txt))$
   static_files: public/\1
-  upload: public/.*\.(json|ico|png|js)$
+  upload: public/.*\.(json|ico|png|js|txt)$
   secure: always
 - url: /
   static_files: build/index.html
