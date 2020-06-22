@@ -1,4 +1,4 @@
-# service: demo-gae
+service: demo-gae
 runtime: nodejs10
 instance_class: F1
 handlers:
